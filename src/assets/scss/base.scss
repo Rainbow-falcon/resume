@@ -1,0 +1,16 @@
+@import "./fonts.scss";
+@import "./icons.scss";
+@import "./variables.scss";
+@import "./fontawesome/scss/fontawesome.scss";
+@import "./fontawesome/scss/brands.scss";
+@import "./fontawesome/scss/solid.scss";
+@import "./material-icons/iconfont/material-icons.scss";
+@import "./fontawesome/scss/regular.scss";
+@import "./bootstrap_5/bootstrap.scss";
+
+body {
+  font-family: "Wix Madefor Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: inherit;
+  font-style: inherit;
+}
