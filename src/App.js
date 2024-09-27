@@ -1,31 +1,29 @@
 import "./App.css";
+import Slider from "./components/slider";
 
 function App() {
   return (
-    <div className="App">
-      <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <i class="fa-brands fa-github-square"></i>
-  <span class="material-icons">pie_chart</span>         
-<span class="material-icons-outlined">pie_chart</span> 
-<span class="material-icons-round">pie_chart</span>  
-<span class="material-icons-sharp">pie_chart</span>   
-<span class="material-icons-two-tone">pie_chart</span> 
-</form>
-    </div>
+    <main>
+      <div className="container-fluid p-0 m-0">
+        <nav className="navbar bg-white m-3 shadow-sm rounded-3 border border-1 border-light py-3">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="#">
+              Navbar
+            </a>
+          </div>
+        </nav>
+        <div className="row m-0">
+          <div className="col-auto">
+            <Slider />
+          </div>
+          <div className="col">
+            <div className="App">
+              <button className="btn btn-primary">suybasd</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
 
