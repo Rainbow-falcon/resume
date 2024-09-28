@@ -6,73 +6,59 @@ import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepButton from "@mui/material/StepButton";
+import { useTheme } from "@mui/material/styles";
+import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
-
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import GrainIcon from "@mui/icons-material/Grain";
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-const steps = [""];
+const steps = [
+  {
+    label: "Select campaign settings",
+    description: (
+      <div>
+        <h1>sdfsdf</h1>
+      </div>
+    ),
+  },
+  {
+    label: "Create an ad group",
+    description:
+    (
+      <div>
+        <h1>two</h1>
+      </div>
+    ),
+  },
+  {
+    label: "Create an ad",
+    description: (
+      <div>
+        <h1>three</h1>
+      </div>
+    ),
+  },
+];
+
 function Details() {
+  const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [completed, setCompleted] = React.useState({});
-
-  const totalSteps = () => {
-    return steps.length;
-  };
-
-  const completedSteps = () => {
-    return Object.keys(completed).length;
-  };
-
-  const isLastStep = () => {
-    return activeStep === totalSteps() - 1;
-  };
-
-  const allStepsCompleted = () => {
-    return completedSteps() === totalSteps();
-  };
+  const maxSteps = steps.length;
 
   const handleNext = () => {
-    const newActiveStep =
-      isLastStep() && !allStepsCompleted()
-        ? // It's the last step, but not all steps have been completed,
-          // find the first step that has been completed
-          steps.findIndex((step, i) => !(i in completed))
-        : activeStep + 1;
-    setActiveStep(newActiveStep);
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleStep = (step) => () => {
-    setActiveStep(step);
-  };
-
-  const handleComplete = () => {
-    setCompleted({
-      ...completed,
-      [activeStep]: true,
-    });
-    handleNext();
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-    setCompleted({});
-  };
   return (
     <section>
-      <Grid container spacing={2}>
-        <Grid size={8}>
+      <div className="row">
+        <div className="col">
           <Paper sx={{}} className="rs_slider p-3">
-            <div role="presentation" onClick={handleClick}>
+            <div role="presentation">
               <Breadcrumbs aria-label="breadcrumb">
                 <Link
                   underline="hover"
@@ -101,34 +87,49 @@ function Details() {
                 <p>We suggest including an email and phone number.</p>
               </Box>
             </div>
-            <Box sx={{ width: "100%" }}>
-              <div>
-                <React.Fragment>
-                  <Typography sx={{ mt: 2, mb: 1, py: 1 }}>
-                    Step {activeStep + 1}
-                  </Typography>
-                  <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-                    <Button
-                      color="inherit"
-                      disabled={activeStep === 0}
-                      onClick={handleBack}
-                      sx={{ mr: 1 }}
-                    >
-                      Back
-                    </Button>
-                    <Box sx={{ flex: "1 1 auto" }} />
-                    <Button onClick={handleNext} sx={{ mr: 1 }}>
-                      Next
-                    </Button>
-                   
-                  </Box>
-                </React.Fragment>
-              </div>
+
+            <Box sx={{ height: 255, maxWidth: 400, width: "100%", p: 2 }}>
+              {steps[activeStep].description}
             </Box>
+
+            <MobileStepper
+              variant="progress"
+              steps={maxSteps}
+              position="static"
+              activeStep={activeStep}
+              nextButton={
+                <Button
+                  size="small"
+                  onClick={handleNext}
+                  disabled={activeStep === maxSteps - 1}
+                >
+                  Next
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowLeft />
+                  ) : (
+                    <KeyboardArrowRight />
+                  )}
+                </Button>
+              }
+              backButton={
+                <Button
+                  size="small"
+                  onClick={handleBack}
+                  disabled={activeStep === 0}
+                >
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowRight />
+                  ) : (
+                    <KeyboardArrowLeft />
+                  )}
+                  Back
+                </Button>
+              }
+            />
           </Paper>
-        </Grid>
-        <Grid size={4}></Grid>
-      </Grid>
+        </div>
+        <div className="col-12 col-md-4 d-none d-lg-flex"></div>
+      </div>
     </section>
   );
 }
