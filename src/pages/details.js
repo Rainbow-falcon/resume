@@ -184,7 +184,7 @@ function Details() {
               </Breadcrumbs>
             </div>
 
-            <Box sx={{ width: "100%", height: "calc(100vh - 216px)", p: 2 }}>
+            <Box sx={{ width: "100%", height: "calc(100vh - 276px)", p: 2, overflow:'auto', background:'white' }}>
               <Container>{steps[activeStep].description}</Container>
             </Box>
 
