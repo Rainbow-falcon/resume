@@ -1,4 +1,4 @@
-import { Paper, Box } from "@mui/material";
+import { Paper, Box, Container } from "@mui/material";
 import * as React from "react";
 import Grid from "@mui/material/Grid2";
 import "./../assets/scss/pages/slider.scss";
@@ -7,6 +7,7 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import { useTheme } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
 import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
@@ -16,7 +17,54 @@ import GrainIcon from "@mui/icons-material/Grain";
 const contactDetails = () => {
   return (
     <div>
-      <h1>ima from step contactDetails</h1>
+      <Box>
+        <h1 className="fw-bold">
+          What’s the best way for employers to contact you?
+        </h1>
+        <p className=" fs-4 my-3" style={{ color: "#828baa" }}>
+          We suggest including an email and phone number.
+        </p>
+        <div className="row">
+          <div className="col-12 col-md-6 mb-4">
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+              sx={{width:'100%'}}
+            />
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <TextField id="filled-basic" label="Filled" variant="filled" sx={{width:'100%'}} />
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <TextField
+              id="standard-basic"
+              label="Standard"
+              variant="standard"
+              sx={{width:'100%'}}
+            />
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <TextField
+              id="outlined-basic"
+              label="Outlined"
+              variant="outlined"
+              sx={{width:'100%'}}
+            />
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <TextField id="filled-basic" label="Filled" variant="filled" sx={{width:'100%'}}/>
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <TextField
+              id="standard-basic"
+              label="Standard"
+              variant="standard"
+              sx={{width:'100%'}}
+            />
+          </div>
+        </div>
+      </Box>
     </div>
   );
 };
@@ -111,8 +159,8 @@ function Details() {
     <section>
       <div className="row">
         <div className="col">
-          <Paper sx={{}} className="rs_slider p-3">
-            <div role="presentation">
+          <Paper sx={{}} className="rs_slider p-2 pt-md-5 px-md-5">
+            <div role="presentation" className="p-3">
               <Breadcrumbs aria-label="breadcrumb">
                 <Link
                   underline="hover"
@@ -134,56 +182,66 @@ function Details() {
                   Create Resume
                 </Typography>
               </Breadcrumbs>
-              <Box>
-                <h1 className="fw-bold">
-                  What’s the best way for employers to contact you?
-                </h1>
-                <p>We suggest including an email and phone number.</p>
-              </Box>
             </div>
 
-            <Box sx={{ height: 255, maxWidth: 400, width: "100%", p: 2 }}>
-              {steps[activeStep].description}
+            <Box sx={{ width: "100%", height: "calc(100vh - 216px)", p: 2 }}>
+              <Container>{steps[activeStep].description}</Container>
             </Box>
 
-            <MobileStepper
-              variant="progress"
-              steps={maxSteps}
-              position="static"
-              activeStep={activeStep}
-              nextButton={
-                <Button
-                  size="small"
-                  onClick={handleNext}
-                  disabled={activeStep === maxSteps - 1}
-                >
-                  Next
-                  {theme.direction === "rtl" ? (
-                    <KeyboardArrowLeft />
-                  ) : (
-                    <KeyboardArrowRight />
-                  )}
-                </Button>
-              }
-              backButton={
-                <Button
-                  size="small"
-                  onClick={handleBack}
-                  disabled={activeStep === 0}
-                >
-                  {theme.direction === "rtl" ? (
-                    <KeyboardArrowRight />
-                  ) : (
-                    <KeyboardArrowLeft />
-                  )}
-                  Back
-                </Button>
-              }
-            />
+            <Box
+              position={"sticky"}
+              bottom={0}
+              borderTop={"1px dashed #d1cccc"}
+              p={2}
+            >
+              <MobileStepper
+                variant="progress"
+                steps={maxSteps}
+                position="static"
+                activeStep={activeStep}
+                nextButton={
+                  <Button
+                    variant="contained"
+                    size="large"
+                    onClick={handleNext}
+                    disabled={activeStep === maxSteps - 1}
+                  >
+                    Next
+                    {theme.direction === "rtl" ? (
+                      <KeyboardArrowLeft />
+                    ) : (
+                      <KeyboardArrowRight />
+                    )}
+                  </Button>
+                }
+                backButton={
+                  <Button
+                    variant="contained"
+                    className="btn btn-primary"
+                    size="large"
+                    onClick={handleBack}
+                    disabled={activeStep === 0}
+                  >
+                    {theme.direction === "rtl" ? (
+                      <KeyboardArrowRight />
+                    ) : (
+                      <KeyboardArrowLeft />
+                    )}
+                    Back
+                  </Button>
+                }
+              />
+            </Box>
           </Paper>
         </div>
-        <div className="col-12 col-md-4 d-none d-lg-flex align-items-center justify-content-center" style={{backgroundColor:'#c0cdf0'}}>
-          <img src={require('./../assets/images/resume.jpg')}  style={{maxHeight:'100%', maxWidth:'100%'}}/>
+        <div
+          className="col-12 col-md-4 d-none d-lg-flex align-items-center justify-content-center"
+          style={{ backgroundColor: "#c0cdf0" }}
+        >
+          <img
+            src={require("./../assets/images/resume.jpg")}
+            style={{ maxHeight: "100%", maxWidth: "100%" }}
+          />
         </div>
       </div>
     </section>
