@@ -12,31 +12,85 @@ import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import GrainIcon from "@mui/icons-material/Grain";
+
+const contactDetails = () => {
+  return (
+    <div>
+      <h1>ima from step contactDetails</h1>
+    </div>
+  );
+};
+const WorkHistory = () => {
+  return (
+    <div>
+      <h1>ima from step WorkHistory</h1>
+    </div>
+  );
+};
+const Education = () => {
+  return (
+    <div>
+      <h1>ima from step Education</h1>
+    </div>
+  );
+};
+const Qualifications = () => {
+  return (
+    <div>
+      <h1>ima from step Qualifications</h1>
+    </div>
+  );
+};
+const Skills = () => {
+  return (
+    <div>
+      <h1>ima from step onSkillse</h1>
+    </div>
+  );
+};
+const PersonalStatement = () => {
+  return (
+    <div>
+      <h1>ima from step PersonalStatement</h1>
+    </div>
+  );
+};
+const References = () => {
+  return (
+    <div>
+      <h1>ima from step References</h1>
+    </div>
+  );
+};
+const Finalise = () => {
+  return (
+    <div>
+      <h1>ima from step Finalise</h1>
+    </div>
+  );
+};
+
 const steps = [
   {
-    label: "Select campaign settings",
-    description: (
-      <div>
-        <h1>sdfsdf</h1>
-      </div>
-    ),
+    description: <div>{contactDetails()}</div>,
   },
   {
-    label: "Create an ad group",
-    description:
-    (
-      <div>
-        <h1>two</h1>
-      </div>
-    ),
+    description: <div>{WorkHistory()}</div>,
   },
   {
-    label: "Create an ad",
-    description: (
-      <div>
-        <h1>three</h1>
-      </div>
-    ),
+    description: <div>{Education()}</div>,
+  },
+  {
+    description: <div>{Qualifications()}</div>,
+  },
+  {
+    description: <div>{PersonalStatement()}</div>,
+  },
+  {
+    description: <div>{References()}</div>,
+  },
+  {
+    description: <div>{Finalise()}</div>,
   },
 ];
 
