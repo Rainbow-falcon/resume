@@ -1,13 +1,9 @@
 .rs_slider {
     background: white;
-    width: 280px;
     z-index: 1026;
     overflow: hidden;
-    box-shadow: 0px 8px 24px rgba(27, 46, 94, 0.12);
     transition: width 0.2s ease;
     height: calc(100vh - 122px);
-    margin: 1rem 0px;
     border-radius: 8px;
-    border: 1px solid #dbe0e5;
     position: relative;
 }
