@@ -182,7 +182,9 @@ function Details() {
             />
           </Paper>
         </div>
-        <div className="col-12 col-md-4 d-none d-lg-flex"></div>
+        <div className="col-12 col-md-4 d-none d-lg-flex align-items-center justify-content-center" style={{backgroundColor:'#c0cdf0'}}>
+          <img src={require('./../assets/images/resume.jpg')}  style={{maxHeight:'100%', maxWidth:'100%'}}/>
+        </div>
       </div>
     </section>
   );
