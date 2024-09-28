@@ -26,42 +26,111 @@ const contactDetails = () => {
         </p>
         <div className="row">
           <div className="col-12 col-md-6 mb-4">
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-              sx={{width:'100%'}}
-            />
+            <div class="mb-3">
+              <label
+                for="exampleInputEmail1"
+                class="form-label fw-bold text-muted"
+              >
+                First Name
+              </label>
+              <Paper square={false}>
+                <TextField
+                  id="outlined-basic"
+                  sx={{ background: "#f9fafb" }}
+                  fullWidth
+                />
+              </Paper>
+            </div>
           </div>
           <div className="col-12 col-md-6 mb-4">
-            <TextField id="filled-basic" label="Filled" variant="filled" sx={{width:'100%'}} />
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted"
+            >
+              Last name
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
           </div>
           <div className="col-12 col-md-6 mb-4">
-            <TextField
-              id="standard-basic"
-              label="Standard"
-              variant="standard"
-              sx={{width:'100%'}}
-            />
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted"
+            >
+              Country
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
           </div>
           <div className="col-12 col-md-6 mb-4">
-            <TextField
-              id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
-              sx={{width:'100%'}}
-            />
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted"
+            >
+              Town or City
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
           </div>
           <div className="col-12 col-md-6 mb-4">
-            <TextField id="filled-basic" label="Filled" variant="filled" sx={{width:'100%'}}/>
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted"
+            >
+              Post Code
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
           </div>
           <div className="col-12 col-md-6 mb-4">
-            <TextField
-              id="standard-basic"
-              label="Standard"
-              variant="standard"
-              sx={{width:'100%'}}
-            />
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted"
+            >
+              Phone Number
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted"
+            >
+              Emil Id
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
           </div>
         </div>
       </Box>
@@ -160,7 +229,7 @@ function Details() {
       <div className="row">
         <div className="col">
           <Paper sx={{}} className="rs_slider p-2 pt-md-5 px-md-5">
-            <div role="presentation" className="p-3">
+            <div role="presentation" className="p-1 p-md-3">
               <Breadcrumbs aria-label="breadcrumb">
                 <Link
                   underline="hover"
@@ -184,8 +253,16 @@ function Details() {
               </Breadcrumbs>
             </div>
 
-            <Box sx={{ width: "100%", height: "calc(100vh - 276px)", p: 2, overflow:'auto', background:'white' }}>
-              <Container>{steps[activeStep].description}</Container>
+            <Box
+              sx={{
+                width: "100%",
+                height: "calc(100vh - 276px)",
+                p: {xs: 1, md:3},
+                overflow: "auto",
+                background: "white",
+              }}
+            >
+              <Container sx={{p: {xs: 1, md:1}}}>{steps[activeStep].description}</Container>
             </Box>
 
             <Box
