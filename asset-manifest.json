@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/resume/static/css/main.4edccf70.css",
-    "main.js": "/resume/static/js/main.02c1dc4a.js",
+    "main.js": "/resume/static/js/main.bcb6a299.js",
     "static/js/453.ed3810f9.chunk.js": "/resume/static/js/453.ed3810f9.chunk.js",
     "static/media/fa-solid-900.ttf": "/resume/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
     "static/media/material-icons-two-tone.woff": "/resume/static/media/material-icons-two-tone.3baa5b8f3469222b822d.woff",
     "static/media/material-icons-two-tone.woff2": "/resume/static/media/material-icons-two-tone.4ef4218c522f1eb6b5b1.woff2",
     "static/media/fa-brands-400.ttf": "/resume/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
     "static/media/material-icons-round.woff": "/resume/static/media/material-icons-round.5d681e2edae8c60630db.woff",
+    "static/media/resume.jpg": "/resume/static/media/resume.25e40411bf60f6f047cf.jpg",
     "static/media/material-icons-outlined.woff": "/resume/static/media/material-icons-outlined.f882956fd323fd322f31.woff",
     "static/media/material-icons-round.woff2": "/resume/static/media/material-icons-round.c380809fd3677d7d6903.woff2",
     "static/media/material-icons.woff": "/resume/static/media/material-icons.4d73cb90e394b34b7670.woff",
@@ -21,11 +22,11 @@
     "static/media/fa-regular-400.woff2": "/resume/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
     "index.html": "/resume/index.html",
     "main.4edccf70.css.map": "/resume/static/css/main.4edccf70.css.map",
-    "main.02c1dc4a.js.map": "/resume/static/js/main.02c1dc4a.js.map",
+    "main.bcb6a299.js.map": "/resume/static/js/main.bcb6a299.js.map",
     "453.ed3810f9.chunk.js.map": "/resume/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4edccf70.css",
-    "static/js/main.02c1dc4a.js"
+    "static/js/main.bcb6a299.js"
   ]
 }
