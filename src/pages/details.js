@@ -1,6 +1,11 @@
 import { Paper, Box, Container } from "@mui/material";
 import * as React from "react";
-import Grid from "@mui/material/Grid2";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+import Avatar from "@mui/material/Avatar";
+import BadgeIcon from "@mui/icons-material/Badge";
+import { styled } from "@mui/material/styles";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 import "./../assets/scss/pages/slider.scss";
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
@@ -13,39 +18,103 @@ import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import GrainIcon from "@mui/icons-material/Grain";
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import BusinessIcon from "@mui/icons-material/Business";
+import ContactEmergencyIcon from "@mui/icons-material/ContactEmergency";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import DateRangeIcon from "@mui/icons-material/DateRange";
+import FlagIcon from "@mui/icons-material/Flag";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+const VisuallyHiddenInput = styled("input")({
+  clip: "rect(0 0 0 0)",
+  clipPath: "inset(50%)",
+  height: 1,
+  overflow: "hidden",
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  whiteSpace: "nowrap",
+  width: 1,
+});
 
 const contactDetails = () => {
   return (
     <div>
       <Box>
-        <h1 className="fw-bold">
+        <h2 className="fw-bold mb-2">
           What’s the best way for employers to contact you?
-        </h1>
-        <p className=" fs-4 my-3" style={{ color: "#828baa" }}>
+        </h2>
+        <p className=" fs-5 my-2 mb-3" style={{ color: "#828baa" }}>
           We suggest including an email and phone number.
         </p>
         <div className="row">
-          <div className="col-12 col-md-6 mb-4">
-            <div class="mb-3">
-              <label
-                for="exampleInputEmail1"
-                class="form-label fw-bold text-muted"
-              >
-                First Name
-              </label>
-              <Paper square={false}>
-                <TextField
-                  id="outlined-basic"
-                  sx={{ background: "#f9fafb" }}
-                  fullWidth
-                />
-              </Paper>
+          <div className="col-12">
+            <div className="mb-3">
+              <div className="row">
+                <div className="col-auto">
+                  <Avatar
+                    variant="rounded"
+                    sx={{
+                      width: "8rem",
+                      height: "8rem",
+                      border: "1px dashed gray",
+                      p: 1,
+                      fontSize: "5rem",
+                      backgroundColor: "#e7e7e7",
+                    }}
+                  >
+                    <BadgeIcon
+                      fontSize="120px"
+                      width="2rem !important"
+                      height="2rem !important"
+                      sx={{ color: "#aba6a6" }}
+                    />
+                  </Avatar>
+                </div>
+                <div className="col-auto align-content-center text-center">
+                  <p className="fs-7 mb-1 text-muted">
+                    Add a photo to your resume
+                  </p>
+                  <Button
+                    variant="contained"
+                    startIcon={<AddAPhotoIcon />}
+                    component="label"
+                    role={undefined}
+                    tabIndex={-1}
+                  >
+                    Add a photo
+                    <VisuallyHiddenInput
+                      type="file"
+                      onChange={(event) => console.log(event.target.files)}
+                      multiple
+                    />
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
           <div className="col-12 col-md-6 mb-4">
             <label
               for="exampleInputEmail1"
-              class="form-label fw-bold text-muted"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              First Name
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
             >
               Last name
             </label>
@@ -57,25 +126,30 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
-          <div className="col-12 col-md-6 mb-4">
+          <div className="col-12 col-md-12 mb-4">
             <label
               for="exampleInputEmail1"
-              class="form-label fw-bold text-muted"
+              class="form-label fw-bold text-muted fs-7"
             >
               Country
             </label>
             <Paper square={false}>
-              <TextField
-                id="outlined-basic"
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
                 sx={{ background: "#f9fafb" }}
                 fullWidth
-              />
+              >
+                <MenuItem value={10}>India</MenuItem>
+                <MenuItem value={20}>US</MenuItem>
+                <MenuItem value={30}>Australia</MenuItem>
+              </Select>
             </Paper>
           </div>
-          <div className="col-12 col-md-6 mb-4">
+          <div className="col-12 col-md-3 mb-4">
             <label
               for="exampleInputEmail1"
-              class="form-label fw-bold text-muted"
+              class="form-label fw-bold text-muted fs-7"
             >
               Town or City
             </label>
@@ -87,10 +161,10 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
-          <div className="col-12 col-md-6 mb-4">
+          <div className="col-12 col-md-3 mb-4">
             <label
               for="exampleInputEmail1"
-              class="form-label fw-bold text-muted"
+              class="form-label fw-bold text-muted fs-7"
             >
               Post Code
             </label>
@@ -102,10 +176,10 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
-          <div className="col-12 col-md-6 mb-4">
+          <div className="col-12 col-md-3 mb-4">
             <label
               for="exampleInputEmail1"
-              class="form-label fw-bold text-muted"
+              class="form-label fw-bold text-muted fs-7"
             >
               Phone Number
             </label>
@@ -117,12 +191,12 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
-          <div className="col-12 col-md-6 mb-4">
+          <div className="col-12 col-md-3 mb-4">
             <label
               for="exampleInputEmail1"
-              class="form-label fw-bold text-muted"
+              class="form-label fw-bold text-muted fs-7 fs-7"
             >
-              Emil Id
+              Email Id
             </label>
             <Paper square={false}>
               <TextField
@@ -132,6 +206,47 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
+          <div className="col-12">
+            <h6 className="fw-bold fs-6">Add Section</h6>
+          </div>
+          <List>
+            <div className="row">
+              <div className="col-4">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ContactEmergencyIcon color="red" />
+                  </ListItemIcon>
+                  <ListItemText primary="Driving Licence" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <FlagIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Nationality" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <DateRangeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Date Of birth" />
+                </ListItemButton>
+              </div>
+              <div className="col-4">
+                <ListItemButton>
+                  <ListItemIcon>
+                    <BusinessIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Address" />
+                </ListItemButton>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <LinkedInIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Linked In" />
+                </ListItemButton>
+              </div>
+            </div>
+          </List>
         </div>
       </Box>
     </div>
@@ -228,7 +343,7 @@ function Details() {
     <section>
       <div className="row">
         <div className="col">
-          <Paper sx={{}} className="rs_slider p-2 pt-md-5 px-md-5">
+          <Paper sx={{}} className="rs_slider p-2 pt-md-3 px-md-3">
             <div role="presentation" className="p-1 p-md-3">
               <Breadcrumbs aria-label="breadcrumb">
                 <Link
@@ -257,17 +372,20 @@ function Details() {
               sx={{
                 width: "100%",
                 height: "calc(100vh - 276px)",
-                p: {xs: 1, md:3},
+                p: { xs: 1, md: 2 },
                 overflow: "auto",
                 background: "white",
               }}
             >
-              <Container sx={{p: {xs: 1, md:1}}}>{steps[activeStep].description}</Container>
+              <Container sx={{ p: { xs: 1, md: 1 } }}>
+                {steps[activeStep].description}
+              </Container>
             </Box>
 
             <Box
               position={"sticky"}
               bottom={0}
+              backgroundColor="white"
               borderTop={"1px dashed #d1cccc"}
               p={2}
             >

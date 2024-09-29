@@ -7,3 +7,30 @@
 @import "./material-icons/iconfont/material-icons.scss";
 @import "./fontawesome/scss/regular.scss";
 @import "./bootstrap_5/bootstrap.scss";
+
+html{
+    font-size: 14px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b7b7b7;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b7b7b7;
+  }
+  .fs-7{
+    font-size: .9rem;
+  }

@@ -105,6 +105,7 @@ function App() {
   const theme = createTheme({
     typography: {
       fontFamily: ["Poppins", 'sans-serif'].join(","),
+      fontSize: 14,
     },
   });
 
