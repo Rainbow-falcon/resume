@@ -126,7 +126,7 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
-          <div className="col-12 col-md-12 mb-4">
+          <div className="col-12 col-md-6 mb-4">
             <label
               for="exampleInputEmail1"
               class="form-label fw-bold text-muted fs-7"
@@ -146,52 +146,7 @@ const contactDetails = () => {
               </Select>
             </Paper>
           </div>
-          <div className="col-12 col-md-3 mb-4">
-            <label
-              for="exampleInputEmail1"
-              class="form-label fw-bold text-muted fs-7"
-            >
-              Town or City
-            </label>
-            <Paper square={false}>
-              <TextField
-                id="outlined-basic"
-                sx={{ background: "#f9fafb" }}
-                fullWidth
-              />
-            </Paper>
-          </div>
-          <div className="col-12 col-md-3 mb-4">
-            <label
-              for="exampleInputEmail1"
-              class="form-label fw-bold text-muted fs-7"
-            >
-              Post Code
-            </label>
-            <Paper square={false}>
-              <TextField
-                id="outlined-basic"
-                sx={{ background: "#f9fafb" }}
-                fullWidth
-              />
-            </Paper>
-          </div>
-          <div className="col-12 col-md-3 mb-4">
-            <label
-              for="exampleInputEmail1"
-              class="form-label fw-bold text-muted fs-7"
-            >
-              Phone Number
-            </label>
-            <Paper square={false}>
-              <TextField
-                id="outlined-basic"
-                sx={{ background: "#f9fafb" }}
-                fullWidth
-              />
-            </Paper>
-          </div>
-          <div className="col-12 col-md-3 mb-4">
+          <div className="col-12 col-md-6 mb-4">
             <label
               for="exampleInputEmail1"
               class="form-label fw-bold text-muted fs-7 fs-7"
@@ -206,40 +161,86 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
+          <div className="col-12 col-md-4 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              Town or City
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
+          </div>
+          <div className="col-12 col-md-4 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              Post Code
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
+          </div>
+          <div className="col-12 col-md-4 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              Phone Number
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
+          </div>
+          
           <div className="col-12">
             <h6 className="fw-bold fs-6">Add Section</h6>
           </div>
           <List>
             <div className="row">
-              <div className="col-4">
+              <div className="col-12 col-md-4">
                 <ListItemButton>
-                  <ListItemIcon>
-                    <ContactEmergencyIcon color="red" />
+                  <ListItemIcon sx={{color:'#1565c0'}}>
+                    <ContactEmergencyIcon  />
                   </ListItemIcon>
                   <ListItemText primary="Driving Licence" />
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemIcon>
+                  <ListItemIcon sx={{color:'#1565c0'}}>
                     <FlagIcon />
                   </ListItemIcon>
                   <ListItemText primary="Nationality" />
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemIcon>
+                  <ListItemIcon sx={{color:'#1565c0'}}>
                     <DateRangeIcon />
                   </ListItemIcon>
                   <ListItemText primary="Date Of birth" />
                 </ListItemButton>
               </div>
-              <div className="col-4">
+              <div className="col-12 col-md-4">
                 <ListItemButton>
-                  <ListItemIcon>
+                  <ListItemIcon sx={{color:'#1565c0'}}>
                     <BusinessIcon />
                   </ListItemIcon>
                   <ListItemText primary="Address" />
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemIcon>
+                  <ListItemIcon sx={{color:'#1565c0'}}>
                     <LinkedInIcon />
                   </ListItemIcon>
                   <ListItemText primary="Linked In" />
