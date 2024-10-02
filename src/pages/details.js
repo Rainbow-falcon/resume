@@ -2,7 +2,7 @@ import { Paper, Box, Container } from "@mui/material";
 import * as React from "react";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import Avatar from "@mui/material/Avatar";
-import BadgeIcon from "@mui/icons-material/Badge";
+import PersonIcon from "@mui/icons-material/Person";
 import { styled } from "@mui/material/styles";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -24,10 +24,18 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import BusinessIcon from "@mui/icons-material/Business";
 import ContactEmergencyIcon from "@mui/icons-material/ContactEmergency";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import DateRangeIcon from "@mui/icons-material/DateRange";
 import FlagIcon from "@mui/icons-material/Flag";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import ListSubheader from "@mui/material/ListSubheader";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
   clipPath: "inset(50%)",
@@ -66,7 +74,7 @@ const contactDetails = () => {
                       backgroundColor: "#e7e7e7",
                     }}
                   >
-                    <BadgeIcon
+                    <PersonIcon
                       fontSize="120px"
                       width="2rem !important"
                       height="2rem !important"
@@ -206,7 +214,7 @@ const contactDetails = () => {
               />
             </Paper>
           </div>
-          
+
           <div className="col-12">
             <h6 className="fw-bold fs-6">Add Section</h6>
           </div>
@@ -214,19 +222,19 @@ const contactDetails = () => {
             <div className="row">
               <div className="col-12 col-md-4">
                 <ListItemButton>
-                  <ListItemIcon sx={{color:'#1565c0'}}>
-                    <ContactEmergencyIcon  />
+                  <ListItemIcon sx={{ color: "#1565c0" }}>
+                    <ContactEmergencyIcon />
                   </ListItemIcon>
                   <ListItemText primary="Driving Licence" />
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemIcon sx={{color:'#1565c0'}}>
+                  <ListItemIcon sx={{ color: "#1565c0" }}>
                     <FlagIcon />
                   </ListItemIcon>
                   <ListItemText primary="Nationality" />
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemIcon sx={{color:'#1565c0'}}>
+                  <ListItemIcon sx={{ color: "#1565c0" }}>
                     <DateRangeIcon />
                   </ListItemIcon>
                   <ListItemText primary="Date Of birth" />
@@ -234,13 +242,13 @@ const contactDetails = () => {
               </div>
               <div className="col-12 col-md-4">
                 <ListItemButton>
-                  <ListItemIcon sx={{color:'#1565c0'}}>
+                  <ListItemIcon sx={{ color: "#1565c0" }}>
                     <BusinessIcon />
                   </ListItemIcon>
                   <ListItemText primary="Address" />
                 </ListItemButton>
                 <ListItemButton>
-                  <ListItemIcon sx={{color:'#1565c0'}}>
+                  <ListItemIcon sx={{ color: "#1565c0" }}>
                     <LinkedInIcon />
                   </ListItemIcon>
                   <ListItemText primary="Linked In" />
@@ -256,7 +264,198 @@ const contactDetails = () => {
 const WorkHistory = () => {
   return (
     <div>
-      <h1>ima from step WorkHistory</h1>
+      <Box>
+        <div className="row">
+          <div className="col">
+            <Accordion sx={{ backgroundColor: "rgb(237, 239, 255)" }}>
+              <AccordionSummary
+                expandIcon={<ArrowDropDownIcon />}
+                aria-controls="panel1-content"
+                id="panel1-header"
+              >
+                <div className="row w-100">
+                  <div className="col-4 align-items-center d-flex">
+                    <Typography variant="p">
+                      <Typography
+                        variant="span"
+                        className="me-2 px-2 rounded-2 text-white"
+                        sx={{ backgroundColor: "rgb(254, 125, 139)" }}
+                      >
+                        30%
+                      </Typography>
+                      <Typography variant="span">Your resume scrore</Typography>
+                    </Typography>
+                  </div>
+                  <div className="col text-end">
+                    <Button className="" variant="outlined">
+                      Improve Resume <AutoAwesomeIcon className="ms-2" />
+                    </Button>
+                  </div>
+                </div>
+              </AccordionSummary>
+              <AccordionDetails className="bg-white border border-1 border-top-0">
+                <List
+                  sx={{
+                    width: "100%",
+                    marginBottom: "10px",
+                  }}
+                  component="nav"
+                  aria-labelledby="nested-list-subheader"
+                  subheader={
+                    <ListSubheader
+                      component="p"
+                      className="fw-bold fs-6 lh-1"
+                      sx={{ color: "rgb(130, 139, 162)" }}
+                    >
+                      Ai assistant
+                    </ListSubheader>
+                  }
+                >
+                  <ListItemButton>
+                    <ListItemIcon className="mw-auto me-2">
+                      <AutoAwesomeIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Write your profile summary" />
+                  </ListItemButton>
+                </List>
+                <List
+                  sx={{
+                    width: "100%",
+                    marginBottom: "10px",
+                  }}
+                  component="nav"
+                  aria-labelledby="nested-list-subheader"
+                  subheader={
+                    <ListSubheader
+                      component="p"
+                      className="fw-bold fs-6 lh-1"
+                      sx={{ color: "rgb(130, 139, 162)" }}
+                    >
+                      Boost Your scrore
+                    </ListSubheader>
+                  }
+                >
+                  <ListItemButton>
+                    <ListItemIcon className="mw-auto me-2">
+                      <Typography
+                        variant="p"
+                        className="m-0 p-1 text-success"
+                        sx={{ backgroundColor: "rgb(231, 244, 237)" }}
+                      >
+                        25%
+                      </Typography>
+                    </ListItemIcon>
+                    <ListItemText primary="professional work experience" />
+                  </ListItemButton>
+                </List>
+              </AccordionDetails>
+            </Accordion>
+          </div>
+        </div>
+        <h2 className="fw-bold mt-4 fs-4">
+          Tell us about your most recent job
+        </h2>
+        <p className=" fs-5 my-2 mb-3" style={{ color: "#828baa" }}>
+          Show your relevant experience (last 10 years). Use bullet points to
+          note your achievements.
+        </p>
+        <div className="row">
+          <div className="col-12 col-md-6 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              Job title
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              Employer
+            </label>
+            <div className="row">
+              <div className="col">
+                <Paper square={false}>
+                  <TextField
+                    id="outlined-basic"
+                    sx={{ background: "#f9fafb" }}
+                    fullWidth
+                  />
+                </Paper>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              Start & End Date
+            </label>
+            <div className="row">
+              <div className="col">
+                <Paper square={false}>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker />
+                  </LocalizationProvider>
+                </Paper>
+              </div>
+              <div className="col">
+                <Paper square={false}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker />
+                  </LocalizationProvider>
+                </Paper>
+              </div>
+            </div>
+          </div>
+          <div className="col-12 col-md-6 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7"
+            >
+              City
+            </label>
+            <Paper square={false}>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              >
+                <MenuItem value={10}>India</MenuItem>
+                <MenuItem value={20}>US</MenuItem>
+                <MenuItem value={30}>Australia</MenuItem>
+              </Select>
+            </Paper>
+          </div>
+          <div className="col-12 col-md-12 mb-4">
+            <label
+              for="exampleInputEmail1"
+              class="form-label fw-bold text-muted fs-7 fs-7"
+            >
+              Description
+            </label>
+            <Paper square={false}>
+              <TextField
+                id="outlined-basic"
+                sx={{ background: "#f9fafb" }}
+                fullWidth
+              />
+            </Paper>
+          </div>
+         
+        </div>
+      </Box>
     </div>
   );
 };
